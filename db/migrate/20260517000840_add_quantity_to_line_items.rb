@@ -6,12 +6,8 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit https://pragprog.com/titles/rails7 for more book information.
 #---
-class LineItem < ApplicationRecord
-  belongs_to :order, optional: true
-  belongs_to :product
-  belongs_to :cart, optional: true
-
-  def total_price
-    price * quantity
+class AddQuantityToLineItems < ActiveRecord::Migration[7.0]
+  def change
+    add_column :line_items, :quantity, :integer, default: 1
   end
 end

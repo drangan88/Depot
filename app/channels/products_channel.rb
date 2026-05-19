@@ -6,12 +6,12 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit https://pragprog.com/titles/rails7 for more book information.
 #---
-class LineItem < ApplicationRecord
-  belongs_to :order, optional: true
-  belongs_to :product
-  belongs_to :cart, optional: true
+class ProductsChannel < ApplicationCable::Channel
+  def subscribed
+    stream_from "products"
+  end
 
-  def total_price
-    price * quantity
+  def unsubscribed
+    # Any cleanup needed when channel is unsubscribed
   end
 end

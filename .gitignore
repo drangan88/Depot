@@ -36,3 +36,5 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+google-chrome-stable_current_amd64.deb
+*.deb

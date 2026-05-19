@@ -7,6 +7,8 @@
 # Visit https://pragprog.com/titles/rails7 for more book information.
 #---
 class StoreController < ApplicationController
+  include CurrentCart
+  before_action :set_cart
   def index
     @products = Product.order(:title)
   end
